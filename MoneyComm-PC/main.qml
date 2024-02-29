@@ -1,48 +1,42 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Layouts 1.11
-import "./gui/components"
+import QtQuick
+import QtQuick.Layouts 6.3
 
 Window {
-    id: window
-    width: 1024
-    height: 720
+    width: 1200
+    height: 800
     visible: true
-    color: "#282832"
+    color: "#2f3033"
+    visibility: Window.Windowed
     title: qsTr("Money Commander")
 
-
-    RowLayout {
-        id: rowLayout
+    GridLayout {
+        id: gridLayout
         anchors.fill: parent
+        anchors.rightMargin: 10
+        anchors.leftMargin: 10
+        anchors.bottomMargin: 10
+        anchors.topMargin: 10
+        columns: 1
+        rows: 2
 
-        SidePanel {
-            id: sidePanel
-            Layout.fillHeight: true
-        }
-
-        GridLayout{
-            Layout.rightMargin: 10
-            Layout.bottomMargin: 10
-            Layout.leftMargin: 10
-            Layout.topMargin: 10
-            Layout.fillHeight: true
+        Rectangle {
+            id: rectangle
+            height: 100
+            color: "#26282e"
+            radius: 10
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             Layout.fillWidth: true
-            rows: 2
-            columns: 2
-            DashboardWgt{
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                Layout.column: 1
-                Layout.row: 1
-            }
-            DashboardWgt{
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                Layout.column: 2
-                Layout.row: 1
-                color: "red"
-            }
+            Layout.fillHeight: false
         }
+
+
     }
 }
+
+
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.33}D{i:1}
+}
+##^##*/

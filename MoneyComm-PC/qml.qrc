@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>gui/components/SidePanel.qml</file>
-        <file>gui/components/DashboardWgt.qml</file>
-    </qresource>
-</RCC>
