@@ -5,13 +5,15 @@ Window {
     width: 1200
     height: 800
     visible: true
-    color: "#2f3033"
+    color: "#28292c"
     visibility: Window.Windowed
     title: qsTr("Money Commander")
 
     GridLayout {
         id: gridLayout
         anchors.fill: parent
+        rowSpacing: 5
+        columnSpacing: 5
         anchors.rightMargin: 10
         anchors.leftMargin: 10
         anchors.bottomMargin: 10
@@ -20,13 +22,45 @@ Window {
         rows: 2
 
         Rectangle {
-            id: rectangle
+            id: dashboardWidget
             height: 100
-            color: "#26282e"
+            color: "#3b3e48"
             radius: 10
+            border.width: 0
+            Layout.maximumHeight: 400
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             Layout.fillWidth: true
             Layout.fillHeight: false
+
+            ColumnLayout {
+                id: columnLayout
+                width: 100
+                height: 100
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Text {
+                    id: title
+                    color: "#ffffff"
+                    text: qsTr("Text")
+                    font.pixelSize: 20
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.bold: true
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                }
+
+                Text {
+                    id: value
+                    color: "#ffffff"
+                    text: qsTr("Text")
+                    font.pixelSize: 20
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.bold: false
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                }
+            }
         }
 
 
@@ -37,6 +71,6 @@ Window {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.33}D{i:1}
+    D{i:0;formeditorZoom:0.5}
 }
 ##^##*/
